@@ -1,0 +1,18 @@
+f(comando === "avatar") {
+    let member = message.mentions.users.first() || client.users.get(args[0]) || message.author;
+    let avatar = member.displayAvatarURL;
+    if (avatar.endsWith(".gif")) {
+        avatar = `${member.displayAvatarURL}?size=2048`
+    }
+    message.channel.send({
+        embed: {
+            description: `**[Clique aqui para baixar](${avatar})**`,
+            color: 0x8258FA,
+            image: {
+                url: avatar
+            }
+        }
+    }) 
+
+
+}
